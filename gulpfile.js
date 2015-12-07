@@ -45,6 +45,11 @@ var runSequence = require('run-sequence');
 var runGulp = require('run-sequence').use(gulp);
 var replace = require('gulp-replace');//替换文件中的字符串
 var flatten = require('gulp-flatten');//提取文件到目录
+var del = require('del');//删除glob
+
+gulp.task('delete', function () {
+    del('del/**/*.js');
+});
 gulp.task('clean', function () {
     var cssPath = "dist/css", jsPath = "dist/js", imgPath = "dist/img";
     gulp.src([cssPath, jsPath, imgPath], {read: false})
