@@ -6,7 +6,7 @@
  * @type {Gulp|*|exports|module.exports}
  */
 var gulp = require('gulp');
-//var jshint = require('gulp-jshint');//代码检查
+var jshint = require('gulp-jshint');//代码检查
 var useref = require('gulp-useref');//!!!没懂
 var concat = require('gulp-concat');//文件合并
 var rename = require('gulp-rename');//重命名
