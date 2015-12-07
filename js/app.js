@@ -1,3 +1,4 @@
+alert(111);
 var App = function (config, time_ruler, sdata) {
     var _app = this; //转移this上下文
     _app.inHall = null; //当前在哪个大厅上

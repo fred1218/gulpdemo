@@ -6,7 +6,8 @@
  * @type {Gulp|*|exports|module.exports}
  */
 var gulp = require('gulp');
-var jshint = require('gulp-jshint');//代码检查
+//var jshint = require('gulp-jshint');//代码检查
+//var useref = require('gulp-useref');//!!!没懂
 var concat = require('gulp-concat');//文件合并
 var rename = require('gulp-rename');//重命名
 
@@ -30,7 +31,7 @@ var htmlreplace = require('gulp-html-replace');
 var rev = require('gulp-rev');//re-version重新命名版本
 var revReplace = require('gulp-rev-replace');//进行重新命名版本之后的assert的替换.或者gulp-rev-collector
 var revCollector = require('gulp-rev-collector');
-var useref = require('gulp-useref');//!!!没懂
+
 var filter = require('gulp-filter');//!!!与src的exculde类似
 
 
@@ -82,6 +83,7 @@ gulp.task('css', function () {
 //只是路径的替换,revision的版本能不能rename，适用于revCollector
 gulp.task('js', function () {
     return gulp.src(['js/**/*.js'])
+        .pipe(uglify())
         .pipe(rev())
         .pipe(gulp.dest("dist/js"))
         .pipe(rev.manifest())
@@ -160,13 +162,24 @@ gulp.task("testUsefrf", function () {
 });
 
 gulp.task('default', ['dev']);
+
+gulp.task('watch', function () {
+    var watcher = gulp.watch('js/**/*.js', ['js', 'revcollector']);
+    watcher.on('change', function (event) {
+        console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+    });
+})
+
 gulp.task('dev', function (done) {
     runSequence(
         //['testreplace', 'testflatten', 'testHtmlReplace', 'testUsefrf'],
         ['img', 'css', 'js'],
         ['revcollector'],
+        ['watch'],
         //['revreplace'],
-        done);
+        done
+    );
+
 });
 
 
