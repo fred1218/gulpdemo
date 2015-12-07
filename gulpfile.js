@@ -33,7 +33,6 @@ var revCollector = require('gulp-rev-collector');
 var useref = require('gulp-useref');//!!!没懂
 var filter = require('gulp-filter');//!!!与src的exculde类似
 
-//var revNapkin = require('gulp-rev-napkin');
 
 var cache = require('gulp-cache');//缓存
 var clean = require('gulp-clean');//删除文件或者文件夹
