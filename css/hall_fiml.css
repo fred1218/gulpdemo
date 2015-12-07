@@ -1,0 +1,510 @@
+.unselectable {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.page {
+	width: 100%;
+	border: 1px solid #333;
+	border-radius: 2px;
+	padding: 5px;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.page_content {
+	position: relative;
+	border: none;
+	background-color: #fff;
+}
+
+.conditionHeader {
+	width: 1550px;
+}
+
+.arrangeCondition {
+	width: 235px;
+	float: left;
+	height: 146px;
+	border: 1px solid #ccc;
+	box-shadow: 1px 1px 3px #ccc;
+	padding: 5px 10px;
+	border-radius: 2px;
+}
+
+.arrangeFilmlist {
+	width: 470px;
+	overflow: auto;
+	position: relative;
+	float: left;
+	height: 156px;
+	border: 1px solid #ccc;
+	margin-left: 10px;
+	box-shadow: 1px 1px 3px #ccc;
+	border-radius: 2px;
+}
+
+.arrangeFilmlist .grid {
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.arrangeFilmlist .filmRes {
+	display: flex;
+	flex-direction: column;
+	height: 50px;
+	margin: 5px;
+	background-color: #999;
+	box-sizing: border-box;
+}
+
+.arrangePricepolicy {
+	width: 370px;
+	float: left;
+	height: 146px;
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+	margin-left: 10px;
+	box-shadow: 1px 1px 3px #ccc;
+	border-radius: 2px;
+}
+
+.arrangeSellType {
+	width: 352px;
+	float: left;
+	height: 146px;
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+	margin-left: 10px;
+	box-shadow: 1px 1px 3px #ccc;
+	border-radius: 2px;
+}
+
+.film_arrange {
+	width: 1550px;
+	min-width: 1550px;
+	overflow: auto;
+	overflow-x: hidden;
+	position: relative;
+	border-left: 1px solid #ccc;
+	background: #F6F6F6;
+}
+
+.arrangeHeader {
+	width: 1550px;
+	border-bottom: 1px solid #ccc;
+	background-color: #eee;
+}
+
+.date_hall {
+	width: 90px;
+	height: 60px;
+	background: url(date_hall.png) no-repeat;
+}
+
+.time_ruler {
+	position: absolute;
+	left: 90px;
+	top: 0;
+	height: 60px;
+	width: 1441px;
+	float: left;
+}
+
+.time_ruler div {
+	position: absolute;
+	width: 1px;
+	background: #999;
+	bottom: 0;
+	left: 0;
+}
+
+.time_ruler p.ruler_num {
+	position: relative;
+	top: -20px;
+	left: -30px;
+	width: 60px;
+	text-align: center;
+}
+
+.time_ruler p.ruler_date {
+	color: #949494;
+}
+
+.first_line {
+	height: 100%;
+}
+
+.short_line {
+	height: 10px;
+}
+
+.middle_line {
+	height: 15px;
+}
+
+.long_line {
+	height: 22px;
+}
+
+#ban_edit {
+	display: none;
+	background-color: #27A9E3;
+	opacity: 0.1;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 8;
+}
+
+#layoutScroll {
+	height: 650px;
+	overflow: auto;
+}
+
+.drag_area {
+	width: 1530px;
+	overflow: hidden;
+	border-right: 1px solid #ccc;
+	position: relative;
+}
+
+#system_time {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	background-color: #630;
+	z-index: 7;
+	width: 1px;
+	left: 200px;
+	display: none;
+}
+
+.hall_arrange {
+	width: 1530px;
+	height: 75px;
+	border-bottom: 15px solid #ccc;
+	position: relative;
+}
+
+.hall_name {
+	width: 90px;
+	height: 75px;
+	background: #eee;
+	z-index: 6;
+	border-right: 1px solid #ccc;
+}
+
+.hall_name h3 {
+	font-size: 13px;
+	font-weight: bold;
+	color: #333;
+	padding: 5px 0 0 10px;
+	width: 80px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.operate_icon {
+	margin-top: 12px;
+	margin-left: 5px;
+	position: relative;
+}
+
+.operate_icon a {
+	display: inline-block;
+	height: 22px;
+	width: 22px;
+	line-height: 22px;
+}
+
+.operate_icon a.arrange_copy {
+	background: url(a_op1.png) no-repeat;
+}
+
+.operate_icon a.arrange_delete {
+	background: url(a_delete.png) no-repeat;
+}
+
+.operate_icon a.arrange_change {
+	background: url(a_op3.png) no-repeat;
+}
+
+.sold_info {
+	margin-top: 5px;
+	text-indent: 7px;
+}
+
+.hall_films_list {
+	background-color: #ddd;
+	width: 1439px;
+	height: 75px;
+	position: absolute;
+	top: 0;
+	left: 91px;
+}
+
+.hall_films_list.active {
+	background-color: #fff
+}
+
+.toolbar {
+	border-top: 1px solid #333;
+	height: 35px;
+	margin-top: 10px;
+	line-height: 100%;
+}
+
+#leftbar {
+	float: left;
+	width: 500px;
+	height: 30px;
+	line-height: 30px;
+	display: flex;
+	margin: 5px;
+	justify-content: flex-start;
+}
+
+#rightbar {
+	width: 500px;
+	float: right;
+	height: 30px;
+	line-height: 30px;
+	display: flex;
+	margin: 5px;
+	justify-content: flex-end;
+}
+
+.filmType {
+	padding: 2px 4px;
+	height: 16px;
+	background: url(special_green.png) no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	left: 0px;
+	top: 68px;
+	font-size: 12px;
+	font-style: normal;
+	color: #000000;
+	text-align: center;
+	line-height: 16px;
+}
+
+#container > .filmInfo_area {
+	z-index: 7;
+}
+
+.filmInfo_area {
+	position: absolute;
+	top: 2px;
+	background: #FC3;
+	border-radius: 3px;
+	cursor: default;
+	z-index: 5;
+	opacity: 0.9;
+}
+
+.filmInfo_area p {
+	width: auto;
+	display: block;
+	padding: 0;
+	float: none;
+	height: 18px;
+	line-height: 18px;
+	color: #fff;
+	text-indent: 5px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 95%;
+}
+
+.filmInfo_area ul {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	display: none;
+}
+
+.filmInfo_area:hover ul {
+	display: block;
+	cursor: pointer;
+}
+
+.filmInfo_area ul li {
+	width: 25px;
+	height: 21px;
+	margin-top: 1px;
+}
+
+.filmInfo_area ul li.f_del {
+	background: url(del.png) no-repeat center center;
+	background-size: 80% 80%;
+}
+
+.filmInfo_area ul li.f_mod {
+	background: url(mod.png) no-repeat center center;
+	background-size: 80% 80%;
+}
+
+.filmInfo_area ul li.f_handle {
+	background: url(handle.png) no-repeat center center;
+	background-size: 80% 80%;
+}
+
+.planend {
+	background-color: gray;
+}
+
+
+/*0已保存，1待审核，2已审核，3可销售，4销售中，5停售，6放映结束，7已上报'*/
+
+.no_save {
+	background-color: #D6A100;
+}
+
+.unsubmit {
+	background-color: #8B9C10;
+	cursor: move;
+}
+
+.unchecked {
+	background-color: #d69144;
+}
+
+.checked {
+	background-color: #d65e45;
+}
+
+.salecheck {
+	background-color: #03F;
+}
+
+.saleing {
+	background-color: #459bd8;
+}
+
+.salestop {
+	background-color: #d743a1;
+}
+
+.planend {
+	background-color: gray;
+}
+
+.reported {
+	background-color: #8a45d6;
+}
+
+.forbid {
+	background: #f00;
+}
+
+#y_coord {
+	width: 1px;
+	height: 100%;
+	background: #000;
+	position: absolute;
+	top: 0;
+	z-index: 1000;
+	display: none;
+}
+
+#y2_coord {
+	width: 0px;
+	height: 100%;
+	background: #000;
+	position: absolute;
+	top: 0;
+	z-index: 1000;
+	display: none;
+}
+
+#x_coord {
+	width: 100%;
+	height: 0px;
+	background: #000;
+	position: absolute;
+	top: 0;
+	z-index: 1000;
+	display: none;
+}
+
+#time_area {
+	position: absolute;
+	color: #000;
+	text-align: left;
+	text-shadow: 1px 1px 1px #fff;
+	z-index: 999;
+	font-size: 13px;
+	font-weight: bold;
+	display: none;
+	height: 15px;
+	line-height: 15px;
+}
+
+#move_film {
+	border-radius: 5px;
+	box-shadow: 0 0 4px #333;
+	background: #5FCBFA;
+	position: absolute;
+	z-index: 999;
+	display: none;
+	cursor: pointer;
+}
+
+#move_film p {
+	width: auto;
+	display: block;
+	padding: 0;
+	float: none;
+	height: 18px;
+	line-height: 18px;
+	color: #000;
+	text-indent: 5px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 95%;
+}
+
+.GraCase_content {
+	flex-wrap: wrap;
+}
+
+.gracase {
+	color: #fff;
+	float: left;
+	width: 150px;
+	height: 50px;
+	margin: 20px;
+	text-align: center;
+	line-height: 50px;
+	border-radius: 5px;
+}
+
+.lc_state {
+	box-shadow: 0 0 20px #f00;
+}
+
+.join_lc {
+	opacity: 0.3;
+	box-sizing: border-box;
+	background: #f00;
+	box-shadow: 0 0 20px green;
+}
+
+.filmInfo_area_mask {
+	position: absolute;
+	top: 2px;
+	border-radius: 0;
+	cursor: default;
+	z-index: 6;
+}
