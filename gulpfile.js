@@ -50,11 +50,24 @@ var del = require('del');//删除glob
 gulp.task('delete', function () {
     del('del/**/*.js');
 });
+gulp.task('testchanged', function () {
+    gulp.src('testchanged/*.js')
+        .pipe(changed('aaaa'))
+        .pipe(gulp.dest('aaaa'));
+})
+
+
 gulp.task('clean', function () {
-    var cssPath = "dist/css", jsPath = "dist/js", imgPath = "dist/img";
-    gulp.src([cssPath, jsPath, imgPath], {read: false})
+    return gulp.src('aaaa', {read: false})
         .pipe(clean());
 });
+
+gulp.task('add', ['clean'], function () {
+    gulp.src('js/**/*.js')
+        .pipe(gulp.dest('aaaa'));
+});
+
+
 gulp.task('img', function () {
     var imgSrc = "image/*.jpg", imgDst = "dist/image";
     var imgRevPath = "rev/image";
@@ -70,18 +83,29 @@ gulp.task('img', function () {
         .pipe(gulp.dest('rev/image'));
 });
 gulp.task('css', function () {
-    var cssSrc = "css/*.css", cssDst = "dist/css";
+    var cssSrc = "css/**/*.css", cssDst = "dist/css";
     var cssRevPath = "rev/css";
+    var mainfilter = filter(['main.css', 'normalize.css'], {restore: true});
+    var hallfilter = filter(['hall_fiml.css', 'a4.css'], {restore: true});
     return gulp.src(cssSrc)
+        .pipe(mainfilter)
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
         .pipe(csso())
+        .pipe(concat('all.css'))
         .pipe(rev())
-        .pipe(gulp.dest(cssDst))
-        .pipe(rev.manifest())
-        .pipe(gulp.dest('rev/css'))
+        .pipe(gulp.dest('dist/css'))
+        .pipe(mainfilter.restore)
+        .pipe(hallfilter)
+        .pipe(csso())
+        .pipe(rev())
+        .pipe(gulp.dest('dist/css2'))
+        .pipe(hallfilter.restore)
+        .pipe(gulp.dest('dist/allCss'));
+    //.pipe(rev.manifest())
+    //.pipe(gulp.dest('rev/css'))
 });
 
 

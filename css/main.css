@@ -1,0 +1,8 @@
+.a2{
+    width: 100%;
+    border: 1px solid #333;
+    border-radius: 2px;
+    padding: 5px;
+    position: relative;
+    box-sizing: border-box;
+}
