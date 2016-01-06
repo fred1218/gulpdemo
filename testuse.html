@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- build:css css/combined.css -->
+	<link href="css/one.css" rel="stylesheet">
+	<link href="css/two.css" rel="stylesheet">
+	<!-- endbuild -->
+</head>
+<body>
+<!-- build:js scripts/combined1.js -->
+<script type="text/javascript" src="scripts/one.js"></script>
+<script type="text/javascript" src="scripts/two.js"></script>
+<!-- endbuild -->
+<!-- build:js scripts/combined2.js -->
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/monster.js"></script>
+<!-- endbuild -->
+
+<!-- build:remove scripts/combined.js -->
+<div>你是猪</div>
+<!-- endbuild -->
+</body>
+</html>

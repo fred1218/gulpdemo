@@ -64,6 +64,27 @@ gulp.task('testchanged', function () {
 })
 
 
+gulp.task('assert', function () {
+    var jsFilter = filter('**/*.js', {restore: true});
+    var cssFilter = filter('**/*.js', {restore: true});
+    var imgFilter = filter('**/*.+(png|jpg)', {restore: true});
+    gulp.src('common/**/*.*')
+        .pipe(jsFilter)
+        .pipe(uglify())
+        .pipe(jsFilter.restore)
+        .pipe(cssFilter)
+        .pipe(csso())
+        .pipe(cssFilter.restore)
+        .pipe(imgFilter)
+        .pipe(imagemin({
+            optimizationLevel: 3,
+            progressive: true,
+            interlaced: true
+        }))
+        .pipe(imgFilter.restore)
+        .pipe(gulp.dest('common/dist'))
+})
+
 gulp.task('clean', function () {
     return gulp.src('aaaa', {read: false})
         .pipe(clean());

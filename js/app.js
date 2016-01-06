@@ -19,6 +19,7 @@ var App = function (config, time_ruler, sdata) {
         }, 1000 * 60 * time_ruler_opt.space);
     });
 
+
     //调用事件生成器
     var ee = new EventProxy();
 
@@ -36,6 +37,7 @@ var App = function (config, time_ruler, sdata) {
             currentPos: null, //当前位置
             _data: null, //move的电影的数据
         }, //移动电影设置
+
         _ccBlockDef = {
             trigger: '.filmInfo_area' //模块选择权
         },

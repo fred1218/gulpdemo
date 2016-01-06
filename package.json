@@ -33,6 +33,7 @@
     "gulp-minify-css": "^1.2.2",
     "gulp-minify-html": "^1.0.4",
     "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
     "gulp-rev": "^6.0.1",
@@ -44,6 +45,7 @@
     "gulp-useref": "^3.0.3",
     "gulp-watch": "^4.3.5",
     "jshint": "^2.8.0",
+    "lazypipe": "^1.0.1",
     "run-sequence": "^1.1.5"
   }
 }
